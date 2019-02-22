@@ -113,13 +113,11 @@ terbanyak berdasarkan tiga product line yang didapatkan pada soal
 poin b.
 ```
 ### Pemahaman Soal 2a
-```
 Didalam soal ini, Kita diminta untuk mencari nilai data yang diinginkan dalam sebuah file csv. 
 Dalam soal a, Kita diminta untuk melakukan pencarian negara yang paling banyak melakukan penjualan (quantity) dalam tahun 2012.
 Untuk mendapatkan data tersebut kita menggunakan awk. Pada awk ditambahkan ‘, ‘ agar setiap kolom tidak diprint seterusnya dan membuat tidak bsa dilakukannya komputasi. 
 Berikut Script untuk menyelesaikan nya.
 
-```
 ### Jawaban 2a
 
 ```bash
