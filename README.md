@@ -120,7 +120,8 @@ Berikut Script untuk menyelesaikan nya.
 
 ### Jawaban 2a
 
-```bash
+```
+#!bin/bash
 awk -F ',' '{
 arr[$1]+=$10;
 if (max<arr[$1] && $7==2012)
@@ -164,7 +165,9 @@ Dalam soal b kita diminta untuk menemukan jenis produk yang paling banyak dijual
 
 ### Jawaban
 
-```bash
+```
+#!bin/bash
+
 awk -F ',' '{
 
 arr[$4]+=$10;
@@ -290,7 +293,9 @@ Dalam soal c kita diminta untuk menemukan kembali  3 data produk terbanyak dalam
 
 #Jawaban soal 2c
 
-```bash
+```
+#!bin/bash
+
 echo "Personal Accessories"
 
 awk -F ',' '{
