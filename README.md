@@ -638,9 +638,9 @@ printf "$sysSave"
 
 #### Crontab
 ```bash
-@hourly /bin/bash /home/aeris/sisop/modul1/nomor4/nomor4.sh
+0 * * * * /bin/bash /home/aeris/sisop/modul1/nomor4/nomor4.sh
 ```
-Melakukan back up setiap jam dengan keyword hourly
+Melakukan back up setiap jam
 
 ### Penjelasan
 #### Enkripsi
@@ -694,7 +694,6 @@ Batas atas dan Batas bawah dibalik, format pada translate dibalik
 printf "$sysSave"
 ```
 Hasil yang langsung ditampilkan di layar
-
 
 ### **Nomor 5**
 
