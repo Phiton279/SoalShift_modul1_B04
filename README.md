@@ -122,7 +122,7 @@ Berikut Script untuk menyelesaikan nya.
 ```
 ### Jawaban 2a
 
-bash
+```bash
 awk -F ',' '{
 arr[$1]+=$10;
 if (max<arr[$1] && $7==2012)
@@ -131,6 +131,7 @@ kota=$1;
 }
 }
 END {print kota,max}' $item
+```
 
 ### Penjelasan
 ```bash
@@ -160,10 +161,9 @@ END {print kota,max}' $item
 Agar ketika dalam proses tidak diprinting terus menerus maka digunakan end untuk melakukan print disaat semua data selesai terbaca.item adalah nama file csv yang diperiksa
 
 ### Pemahaman soal 2b
-```
+
 Dalam soal b kita diminta untuk menemukan jenis produk yang paling banyak dijual berdasarkan data no 1 yakni tahun 2012 dan dari negara USA. Digunakan if else dalam if untuk menemukan tiga jenis barang terbanyak. Berikut Script yang digunakan.
 
-```
 ### Jawaban
 
 ```bash
