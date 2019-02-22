@@ -121,7 +121,8 @@ Berikut Script untuk menyelesaikan nya.
 
 ```
 ### Jawaban 2a
-```bash
+
+bash
 awk -F ',' '{
 arr[$1]+=$10;
 if (max<arr[$1] && $7==2012)
@@ -131,7 +132,6 @@ kota=$1;
 }
 END {print kota,max}' $item
 
-```
 ### Penjelasan
 ```bash
 awk -F ','
