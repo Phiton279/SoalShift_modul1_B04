@@ -18,4 +18,4 @@ sysSave=`printf "$sysFile" | tr $up-za-$down${up^^}-ZA-${down^^} b-zaB-ZA`
 printf "$sysSave"
 
 # Crontab
-# @hourly /bin/bash /home/aeris/sisop/modul1/nomor4/nomor4.sh
+# 0 * * * * /bin/bash /home/aeris/sisop/modul1/nomor4/nomor4.sh
