@@ -133,7 +133,8 @@ END {print kota,max}' $item
 ```
 
 ### Penjelasan
-```bash
+```
+bash
 awk -F ','
 
 ```
@@ -166,25 +167,68 @@ Dalam soal b kita diminta untuk menemukan jenis produk yang paling banyak dijual
 ### Jawaban
 
 ```
+awk -F "," '{
+	if ($1 == "United States" && $7 == 2012) i[$4]+=$10} 
+	END {
+	  for (x in i) {
+	    print i[x], x}}' $item | sort -nr | head -n 3
+
+echo "c."
+
 ```
 
 ### Penjelasan 2b
+
 ```
+if ($1 == "United States" && $7 == 2012) i[$4]+=$10} 
+
 ```
+
+Pada baris pertama berisi kondisi yang kita inginkan yakni mencari jenis produk pada kolom 4 , yang berasal dari negara amerika dan tahun 2012. Kemudian array jenis barang tersebut ditambah trus dengan nilai sesuai file
+
+```
+END {
+	  for (x in i) {
+	    print i[x], x}}' $item | sort -nr | head -n 3
+
+```
+
+Kemudian pada baris selanjutnya kita menyimoan nilai tersebut pada quantity kolom sepuluh kemudian melakukan print 3 teratas. sort -nr untuk melakukan pengurutan secara numerik namun reverse dari yang paling besar
+
+
 
 #Pemahaman soal 2c
 
-```
-Dalam soal c kita diminta untuk menemukan kembali  3 data produk terbanyak dalam hasil soal b. Sehingga terdapat 9 keluaran. Berdasarkan soal b. 3 jenis barang yang terbanyak adalah perconal accesories, camping Equipment dan mountaineering Equipment. Untuk mencarikan nya tidak jauh berbeda dengan soal b namun memakai 3 awk dengan ketentuan barang nya dri jenis barang yang diinginkan. Berikut Script yang digunakan
+Dalam soal c kita diminta untuk menemukan kembali  3 data produk terbanyak dalam hasil soal b. Sehingga terdapat 9 keluaran. Berdasarkan soal b. 3 jenis barang yang terbanyak adalah perconal accesories, camping Equipment dan Outdoor Protection. Untuk mencarikan nya tidak jauh berbeda dengan soal b namun memakai awk dengan ketentuan barang nya dri jenis barang yang diinginkan. Berikut Script yang digunakan
 
-```
 
 #Jawaban soal 2c
 
 ```
-
+awk -F "," '{
+	if ($1 == "United States" && $7 == 2012 && ($4 == "Personal Accessories" || $4 == "Camping Equipment" || $4 == "Outdoor Protection")) 
+	  i[$6]+=$10} END {
+	    for (x in i) {
+	    
+       print i[x], x}}' $item | sort -nr | head -n 3
+       
 ```
 #Penjelasan 2c
+
+```
+if ($1 == "United States" && $7 == 2012 && ($4 == "Personal Accessories" || $4 == "Camping Equipment" || $4 == "Outdoor Protection")) 
+
+```
+Pada baris ini menjelaskan adanya pengecualian untuk no 2b dan 2a kemudian ditambahkan dengan hasil yang sudah didapat dari jawaban no 2b, yakni pengecuailan terhadap 3 barang yang menjadi jenis teratas dari barang united states pada tahun 2012
+
+```
+i[$6]+=$10} END {
+	    for (x in i) {
+	    
+       print i[x], x}}' $item | sort -nr | head -n 3
+
+```
+Pada baris ini sama degan no 2b ,menyimpan nilai namun dipakai kolom 6 untuk mengambil nilai quantity nya pada kolom 10, kemudian melakukan sort -nr dan menampilkan 3 nilai tertinggi dari sort reverse tersebut
 
 ### **Nomor 3**
 
