@@ -112,13 +112,14 @@ c. Tentukan tiga product yang memberikan penjualan(quantity)
 terbanyak berdasarkan tiga product line yang didapatkan pada soal
 poin b.
 ```
-### Pemahaman Soal 2a
+#### Pemahaman Soal 2a
+
 Didalam soal ini, Kita diminta untuk mencari nilai data yang diinginkan dalam sebuah file csv. 
 Dalam soal a, Kita diminta untuk melakukan pencarian negara yang paling banyak melakukan penjualan (quantity) dalam tahun 2012.
 Untuk mendapatkan data tersebut kita menggunakan awk. Pada awk ditambahkan ‘, ‘ agar setiap kolom tidak diprint seterusnya dan membuat tidak bsa dilakukannya komputasi. 
 Berikut Script untuk menyelesaikan nya.
 
-### Jawaban 2a
+#### Jawaban 2a
 
 ```
 #!bin/bash
@@ -132,7 +133,7 @@ kota=$1;
 END {print kota,max}' $item
 ```
 
-### Penjelasan
+#### Penjelasan
 ```
 bash
 awk -F ','
@@ -160,11 +161,11 @@ END {print kota,max}' $item
 ```
 Agar ketika dalam proses tidak diprinting terus menerus maka digunakan end untuk melakukan print disaat semua data selesai terbaca.item adalah nama file csv yang diperiksa
 
-### Pemahaman soal 2b
+#### Pemahaman soal 2b
 
 Dalam soal b kita diminta untuk menemukan jenis produk yang paling banyak dijual berdasarkan data no 1 yakni tahun 2012 dan dari negara USA. Digunakan if else dalam if untuk menemukan tiga jenis barang terbanyak. Berikut Script yang digunakan.
 
-### Jawaban
+#### Jawaban
 
 ```
 awk -F "," '{
@@ -177,7 +178,7 @@ echo "c."
 
 ```
 
-### Penjelasan 2b
+#### Penjelasan 2b
 
 ```
 if ($1 == "United States" && $7 == 2012) i[$4]+=$10} 
@@ -197,12 +198,12 @@ Kemudian pada baris selanjutnya kita menyimoan nilai tersebut pada quantity kolo
 
 
 
-#Pemahaman soal 2c
+#### Pemahaman soal 2c
 
 Dalam soal c kita diminta untuk menemukan kembali  3 data produk terbanyak dalam hasil soal b. Sehingga terdapat 9 keluaran. Berdasarkan soal b. 3 jenis barang yang terbanyak adalah perconal accesories, camping Equipment dan Outdoor Protection. Untuk mencarikan nya tidak jauh berbeda dengan soal b namun memakai awk dengan ketentuan barang nya dri jenis barang yang diinginkan. Berikut Script yang digunakan
 
 
-#Jawaban soal 2c
+#### Jawaban soal 2c
 
 ```
 awk -F "," '{
@@ -213,7 +214,7 @@ awk -F "," '{
        print i[x], x}}' $item | sort -nr | head -n 3
        
 ```
-#Penjelasan 2c
+#### Penjelasan 2c
 
 ```
 if ($1 == "United States" && $7 == 2012 && ($4 == "Personal Accessories" || $4 == "Camping Equipment" || $4 == "Outdoor Protection")) 
